@@ -8,7 +8,7 @@ var permuteUnique = function(nums) {
 
     let iterate = (arr,temp) =>{
         if(arr.length == 1){
-            res.push([...temp,arr[0]])
+            // res.push([...temp,arr[0]])
             return;
         }
         for(let i =0;i<arr.length;i++){
