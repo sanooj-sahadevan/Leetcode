@@ -1,14 +1,18 @@
-/**
- * @param {number[]} nums
- * @return {number}
- */
+const nums = [-1, 2, -3, 3];
+
 var findMaxK = function(nums) {
-  result = -1
+  let x = [];
 
-   for (let i = 0; i < nums.length; i++) {
-       if (nums.indexOf(-nums[i], i+1) > 0) 
-           if (Math.abs(nums[i]) > result) result = Math.abs(nums[i])            
-   }
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] < 0) {
+      x.push(nums[i]);
+    }
+  }
 
-   return result
+  let maxNegative = Math.min(...x);
+
+  console.log(maxNegative);
+  return Math.abs( maxNegative);
 };
+
+console.log(findMaxK(nums)); 
