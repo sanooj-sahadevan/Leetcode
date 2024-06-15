@@ -60,32 +60,29 @@
 // // ctr = Math.floor(ctr / 2);
 // // console.log(ctr);
 
-// let obj = { name: "san" };
+let obj = { name: "san" };
 
-// let arr = [1, 23];
-// let arr2 = arr;
-// const set = new WeakSet();
+let arr = [1, 23];
 
-// // set.add(1);
-// // set.add(2);
-// // set.add(1);
-// // set.add(2);
+// const set = new Set();
+
+// set.add(1);
+// set.add(2);
+// set.add(1);
+// set.add(2);
 // set.add(obj);
 // set.add(arr);
 // set.add(arr2);
 
 // console.log(set);
 
-// let map = new WeakMap();
+let map = new weekMap();
 
 // map.set("name", "sanooj");
 // map.set("name", "hunais");
-// map.set(arr,obj)
+map.set(arr,obj)
 // map.set(arr,arr2)
 
-// console.log(map);
+console.log(map);
 
-
-
-let arr = [1,2,4,8]
-
+// let arr = [1, 2, 4, 8];
