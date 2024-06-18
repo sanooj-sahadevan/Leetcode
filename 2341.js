@@ -85,4 +85,3 @@ map.set(arr,obj)
 
 console.log(map);
 
-// let arr = [1, 2, 4, 8];
