@@ -42,3 +42,35 @@ var oddEvenList = function(head) {
 //       }
 //       return false
 //     }
+
+// /**
+//  * @param {string} word
+//  * @return {boolean}
+//  */
+// var isValid = function(word) {
+//     if (word.length <3) {
+//         return false;
+//     }
+    
+   
+//         var vowels = ["a", "e", "i", "o", "u"];
+        
+//         let vowelCheck = false;
+//         let consonantCheck = false;
+        
+//         for (let char of word) {
+//             if (vowels.includes(char.toLowerCase())) {
+//                 vowelCheck = true;
+//             } else if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+//                 consonantCheck = true;
+//             }
+//             else if (char =="$" || char =="#" || char =="@"){
+//               return false
+//             }
+//         }
+        
+//         if (vowelCheck && consonantCheck) {
+//             return true;
+//         }
+//     return false;
+//   };
