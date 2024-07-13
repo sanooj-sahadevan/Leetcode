@@ -9,8 +9,8 @@ let text = "nlaebolko";
 // Input: text = "leetcode"
 // Output: 0
 // not complete
-                                                                       // not complete
-let bal = ["b", "a", "l", "o", "o", "n"];     
+// not complete
+let bal = ["b", "a", "l", "o", "o", "n"];
 text = text.split("");
 console.log(text);
 
@@ -21,10 +21,8 @@ for (let i = 0; i < text.length; i++) {
   }
 }
 
-
-for(i=0;i<res.length;i++){
-    if(bal.includes(res[i])){
-
-    }
+for (i = 0; i < res.length; i++) {
+  if (bal.includes(res[i])) {
+  }
 }
 console.log(res);
