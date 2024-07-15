@@ -17,7 +17,6 @@ for (let i = 0; i < arr.length; i++) {
 for (let i = 0; i < arr.length; i++) {
   f[arr[i]]++;
 }
-console.log(f);
 
 let occurrences = new Set();
 
@@ -27,5 +26,5 @@ for (let key in f) {
   }
   occurrences.add(f[key]);
 }
-
+return true;
 console.log(x);
