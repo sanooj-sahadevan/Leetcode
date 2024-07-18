@@ -31,5 +31,4 @@ while (num > 0) {
     ctr++;
   }
 }
-
 console.log(ctr);
