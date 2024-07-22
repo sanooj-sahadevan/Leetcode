@@ -4,6 +4,8 @@
 // let reversedStr = "";
 // // s.split('')
 
+
+
 // // s.join([s[i*k:(i+1)*k][::((-1)**(i+1))] for i in range(len(s)//k+1)])
 // for (i = 0; i < s.length; i++) {
 //   if (k - 1 === i) {
@@ -31,3 +33,5 @@ for (let i = 0; i < s.length; i + k) {
   }
 }
 console.log(res);
+
+
