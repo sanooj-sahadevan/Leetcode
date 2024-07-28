@@ -13,19 +13,22 @@ const nums = [1, 1, 2, 1, 1],
 // Input: nums = [2,2,2,1,2,2,1,2,2,2], k = 2
 // Output: 16
 
-let odd = [];
-
-for (let i = 0; i < nums.length; i++) {
-  if (nums[i] % 2 === 1) {
-    odd.push(nums[i]);
-    nums.splice(i, 1);
-    i--;
-  }
-}
-
-for(let i =0;i<nums.length;i++){
-  
-}
-
-console.log(odd);
-console.log(nums);
+le/**
+* @param {number[]} nums
+* @param {number} k
+* @return {number}
+*/
+var numberOfSubarrays = function (nums, k) {
+  let n = nums.length;
+   let cnt = new Array(n + 1).fill(0);
+   cnt[0] = 1;
+   let ans = 0, t = 0;
+   for (let v of nums) {
+       t += v & 1;
+       if (t - k >= 0) {
+           ans += cnt[t - k];
+       }
+       cnt[t]++;
+   }
+   return ans;
+};
