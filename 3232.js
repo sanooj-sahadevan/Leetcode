@@ -18,15 +18,3 @@ let y = nums.filter((curr, ind) => curr >= 10).reduce((acc, curr) => acc + curr,
 console.log(x);
 console.log(y);
 console.log(x == y ? false : true);
-
-// for (i = 0; i < nums.length; i++) {
-//   if (nums[i] <= 10) {
-//     a = nums[i];
-//   }
-// }
-
-// if (x <= a) {
-//   console.log(false);
-// } else {
-//   console.log(true);
-// }
