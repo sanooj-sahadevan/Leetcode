@@ -18,12 +18,12 @@ b = b.map((a) => a * -1);
 b = arr.concat(b);
 let ctr = Math.floor(n - b.length);
 
-// for (let i = 0; i < ctr / 2; i++) {
-//   if (n % 2 == 0) {
-//     b.push(2);
-//     b.push(-2);
-//   }
-// }
+for (let i = 0; i < ctr / 2; i++) {
+  if (n % 2 == 0) {
+    b.push(2);
+    b.push(-2);
+  }
+}
 
 for (let i = 0; i < ctr; i++) {
   if (n % 2 == 1) {
