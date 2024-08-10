@@ -17,12 +17,12 @@ var reformat = function (s) {
     } else if (Math.abs(alph.length - num.length) > 1) {
         return ''
     } else {
-        let longerArray = alph.length > num.length ? alph : num;
-        let shorterArray = alph.length > num.length ? num : alph;
+        let lArray = alph.length > num.length ? alph : num;
+        let sArray = alph.length > num.length ? num : alph;
 
-        while (longerArray.length || shorterArray.length) {
-            if (longerArray.length) res.push(longerArray.pop());
-            if (shorterArray.length) res.push(shorterArray.pop());
+        while (lArray.length || sArray.length) {
+            if (lArray.length) res.push(lArray.pop());
+            if (sArray.length) res.push(sArray.pop());
         }
 
         return res.join("")
