@@ -43,17 +43,38 @@ Input: words = ["leetcoder", "leetcode", "od", "hamlet", "am"];
 // Input: words = ["blue","green","bu"]
 // Output: []
 // Explanation: No string of words is substring of another string.
-let res = [];
-for (let i = 0; i < words.length; i++) {
-  for (let j = 0; j < words.length; j++) {
-    if (i !== j) {
-      if (words[i].includes(words[j])) {
-        res.push(words[j]);
-      }
-    }
-  }
-}
-console.log(res);
+// let res = [];
+// for (let i = 0; i < words.length; i++) {
+//   for (let j = 0; j < words.length; j++) {
+//     if (i !== j) {
+//       if (words[i].includes(words[j])) {
+//         res.push(words[j]);
+//       }
+//     }
+//   }
+// }
+// console.log(res);
 
-let x = res.filter((ind, curr) => res.indexOf(ind) == curr);
-console.log(x);
+// let x = res.filter((ind, curr) => res.indexOf(ind) == curr);
+// console.log(x);
+let s = "j";
+s = s.split(""); // Split the string into an array of characters
+let res = [];
+const alph = s.filter((char) => char.match(/[a-zA-Z]/));
+const num = s.filter((char) => char.match(/[0-9]/));
+
+if (alph.length === 0 || num.length === 0) {
+  console.log("");
+} else if (Math.abs(alph.length - num.length) > 1) {
+  console.log("");
+} else {
+  let longerArray = alph.length > num.length ? alph : num;
+  let shorterArray = alph.length > num.length ? num : alph;
+
+  while (longerArray.length || shorterArray.length) {
+    if (longerArray.length) res.push(longerArray.pop());
+    if (shorterArray.length) res.push(shorterArray.pop());
+  }
+
+  console.log(res.join(""));
+}
