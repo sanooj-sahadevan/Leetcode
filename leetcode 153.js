@@ -12,7 +12,12 @@ var findMin = function(nums) {
             }
         }
         return x
-        console.log(x)
     
     
+
+
     };
+
+
+
+
