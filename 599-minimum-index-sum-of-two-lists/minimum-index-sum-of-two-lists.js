@@ -48,6 +48,6 @@ var findRestaurant = function (list1, list2) {
   }
 
   console.log(position);
-  
-//   return minListVal;
+
+  //   return minListVal;
 };

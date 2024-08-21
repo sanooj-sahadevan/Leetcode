@@ -1,28 +1,26 @@
-Input: (list1 = ["happy", "sad", "good"]), (list2 = ["sad", "happy", "good"]);
+let num = 9669;
+// Output: 9969
+// Explanation:
+// Changing the first digit results in 6669.
+// Changing the second digit results in 9969.
+// Changing the third digit results in 9699.
+// Changing the fourth digit results in 9666.
+// The maximum number is 9969.
 
-// Output: ["Shogun"]
-// Explanation: The only common string is "Shogun".
-// Example 2:
-
-// Input: list1 = ["Shogun","Tapioca Express","Burger King","KFC"], list2 = ["KFC","Shogun","Burger King"]
-// Output: ["Shogun"]
-// Explanation: The common string with the least index sum is "Shogun" with index sum = (0 + 1) = 1.
+num = num.toString().split("");
 let res = [];
-for (i = 0; i < list1.length; i++) {
-  for (j = 0; j < list2.length; j++) {
-    if (list1[i] === list2[j]) {
-      res.push(i + j);
-    }
+
+for (let j = 0; j < num.length; j++) {
+  let original = num[j];
+
+  if (num[j] == "9") {
+    num[j] = "6";
+  } else if (num[j] == "6") {
+    num[j] = "9";
   }
+
+  res.push(num.join(""));
+  num[j] = original;
 }
 
-let min = Math.min(...res);
-let result = []
-for(i=0;i<list1.length;i++){
-  for(j=0;j<list2.length;j++){
-    if(list1[i]===list2[j] &&  i+j===min  ){
-      result.push(list1[i])
-      
-    }
-  }
-}
+console.log(res);
