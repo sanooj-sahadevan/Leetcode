@@ -13,6 +13,9 @@ let res = [];
 for (let j = 0; j < num.length; j++) {
   let original = num[j];
 
+
+
+  
   if (num[j] == "9") {
     num[j] = "6";
   } else if (num[j] == "6") {

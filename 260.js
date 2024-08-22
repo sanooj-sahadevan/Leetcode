@@ -19,5 +19,6 @@ for(i=0;i<nums.length;i++){
     }
 }
 
-console.log(f);
-console.log(x);
+
+
+djkjbqw
