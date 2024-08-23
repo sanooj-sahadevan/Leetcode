@@ -4,11 +4,11 @@
  * @return {number}
  */
 var xorOperation = function (n, start) {
-
     let res = [];
-    for (let i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         res.push(start + 2 * i);
     }
-    return res.reduce((acc, num) => acc ^ num, 0);
+    return res.reduce((acc, curr) => acc ^ curr, 0);
+
 
 };
