@@ -1,17 +1,13 @@
-// Input: (n = 5), (start = 0);
-// Output: 8
-// Explanation: Array nums is equal to [0, 2, 4, 6, 8] where (0 ^ 2 ^ 4 ^ 6 ^ 8) = 8.
-// Where "^" corresponds to bitwise XOR operator.
-// Example 2:
+let nums = [1, 2, 3];
+// Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 
-Input: n = 4, start = 3
-// Output: 8
-// Explanation: Array nums is equal to [3, 5, 7, 9] where (3 ^ 5 ^ 7 ^ 9) = 8.
+let res = [[]];
 
-
-let res = [];
-for (let i = 0; i < n; i++) {
-  res.push(start + 2 * i);
+for (let i = 0; i < nums.length; i++) {
+  let currentSubsetSize = res.length;
+  for (let j = 0; j < currentSubsetSize; j++) {
+    res.push([...res[j], nums[i]]);
+  }
 }
-return res.reduce((acc, num) => acc ^ num, 0);
 
+console.log(res);

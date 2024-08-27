@@ -17,6 +17,9 @@ const command = "G()(al)"
 
 
 console.log(	 command.replace  (/(\(\))|(\(al\))/g,   (str) => {
+
+
+	
 		return str === '()' ? 'o' : 'al';
 	}))
  

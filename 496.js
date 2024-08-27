@@ -20,6 +20,7 @@ for (let i = 0; i < nums1.length; i++) {
       res.push(nums2[j]);
       found = true;
       break;
+      
     }
   }
   if (!found) {
