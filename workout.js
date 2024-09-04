@@ -1,25 +1,51 @@
-let nums = [1, 3, 5, 4, 7];
-// Output: 3
-// Explanation: The longest continuous increasing subsequence is [1,3,5] with length 3.
-// Even though [1,3,5,7] is an increasing subsequence, it is not continuous as elements 5 and 7 are separated by element
-// 4.
+let coordinate1 = "a7",
+  coordinate2 = "a6";
+// Output: true
+// Eplanation:
+// Boh squares are black.
 // Example 2:
+// Input: coordinate1 = "a1", coordinate2 = "h3"
+// Output: false
+// Explanation:
+// Square "a1" is black and "h3" is white.
 
-// Input: nums = [2,2,2,2,2]
-// Output: 1
-// Explanation: The longest continuous increasing subsequence is [2] with length 1. Note that it must be strictly
-// increasing.
+let obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4,
+  e: 5,
+  f: 6,
+  g: 7,
+  h: 8,
+  i: 9,
+  j: 10,
+  k: 11,
+  l: 12,
+  m: 14,
+  n: 14,
+  o: 15,
+  p: 16,
+  q: 17,
+  r: 18,
+  s: 19,
+  t: 20,
+  u: 21,
+  v: 22,
+  w: 23,
+  x: 24,
+  y: 25,
+  z: 16,
+};
+let a = coordinate1.split("");
+let b = coordinate2.split("");
 
-let length = 1;
-let ctr = 1;
+let sum1 = obj[a[0]] + parseInt(a[1]);
+let sum2 = obj[b[0]] + parseInt(b[1]);
 
-for (let i = 1; i < nums.length; i++) {
-  if (nums[i] > nums[i - 1]) {
-    ctr++;
-    length = Math.max(length, ctr);
-  } else {
-    ctr = 1;
-  }
-}
+let result = (sum1 % 2 === sum2 % 2);
 
-console.log(length);
+console.log(result);
+
+// console.log(x);
+// console.log(y);
