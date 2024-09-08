@@ -18,4 +18,9 @@ var searchRange = function (nums, target) {
     } else {
         return [x[0], x[x.length - 1]];
     }
+
+
+
+
+    
 };

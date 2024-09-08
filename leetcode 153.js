@@ -12,6 +12,10 @@ var findMin = function(nums) {
             }
         }
         return x
+
+
+
+        
     };
 
 

@@ -18,8 +18,5 @@ var sortArrayByParity = function(nums) {
     }
     let a = [...x,...y]
     return a
-    console.log(nums)
-    console.log(x)
-    console.log(y)
-    console.log(a)
+   
     };
