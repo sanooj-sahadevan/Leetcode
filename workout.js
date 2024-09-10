@@ -1,32 +1,23 @@
-Input: words = ["Hello", "Alaska", "Dad", "Peace"];
-// Output: ["Alaska","Dad"]
+let s = "abab";
+// Output: true
+// Explanation: It is the substring "ab" twice.
+// Example 2:
 
-// Input: words = ["omk"]
-// Output: []
+// Input: s = "aba"
+// Output: false
+// Example 3:
 
-// Input: words = ["adsdf","sfd"]
-// Output: ["adsdf","sfd"]
+// Input: s = "abcabcabcabc"
+// Output: true
+// Explanation: It is the substring "abc" four times or the substring
 
+s = s.split("");
 
-let a = "qwertyuiop".split("");
-let b = "asdfghjkl".split("");
-let c = "zxcvbnm".split("");
-console.log(a);
-
-
-let res = [];
-
-for (let i = 0; i < words.length; i++) {
-  let lowerWord = words[i].toLowerCase(); // Make it case-insensitive
-  if (
-    lowerWord.split("").every(char => a.includes(char)) || 
-    lowerWord.split("").every(char => b.includes(char)) || 
-    lowerWord.split("").every(char => c.includes(char))
-  ) {
-    res.push(words[i]);
+for (i = 0; i < s.length; i++) {
+  for (j = i + 1; j < s.length; j++) {
+    if (s[i] === s[j] && s[i + 1] === s[j + 1]) {
+      console.log(true);
+    }
   }
+  console.log(false);
 }
-
-console.log(res);
-return res;
-

@@ -14,7 +14,7 @@ console.log(a);
 let res = [];
 
 for (let i = 0; i < words.length; i++) {
-  let lowerWord = words[i].toLowerCase(); // Make it case-insensitive
+  let lowerWord = words[i].toLowerCase(); 
   if (
     lowerWord.split("").every(char => a.includes(char)) || 
     lowerWord.split("").every(char => b.includes(char)) || 
