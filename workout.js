@@ -1,27 +1,40 @@
-let ranges = [[1,2],[3,4],[5,6]], left = 2, right = 5
-// Output: true
-// Explanation: Every integer between 2 and 5 is covered:
-// - 2 is covered by the first range.
-// - 3 and 4 are covered by the second range.
-// - 5 is covered by the third range.
-// Example 2:
+// ["KthLargest", "add", "add", "add", "add", "add"]
+let nums = [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]];
 
-// Input: ranges = [[1,10],[10,20]], left = 21, right = 21
-// Output: false
-// Explanation: 21 is not covered by any range.
+// Output: [null, 4, 5, 5, 8, 8]
+// Explanation:
+// KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]);
+// kthLargest.add(3); // return 4
+// kthLargest.add(5); // return 5
+// kthLargest.add(10); // return 5
+// kthLargest.add(9); // return 8
+// kthLargest.add(4); // return 8
+// Input:
+// ["KthLargest", "add", "add", "add", "add"]
+// [[4, [7, 7, 7, 7, 8, 3]], [2], [10], [9], [9]]
 
+// Output: [null, 7, 7, 7, 8]
 
- let x = ranges.flat(Infinity)
- console.log(x);
+// Explanation:
 
- for(i =0;i<ranges.length;i++){
-  for(j=i+1;j<ranges.length;j++){
-    if(  ){
-    console.log(true);
-    
-    }
+// KthLargest kthLargest = new KthLargest(4, [7, 7, 7, 7, 8, 3]);
+// kthLargest.add(2); // return 7
+// kthLargest.add(10); // return 7
+// kthLargest.add(9); // return 7
+// kthLargest.add(9); // return 8
+
+let k = 0;
+let res = [];
+for (i = 0; i < nums.length; i++) {
+  k = nums[0][0];
+}
+let x;
+for (j = 0; j < nums.length; j++) {
+  for (i = 0; i < nums.length; i++) {
+    x = nums[j].flat();
   }
- console.log(false);
- 
- }
- 
+
+  let result = x.sort((a, b) => a - b);
+  res.push(result[k - 1]);
+}
+console.log(res);
