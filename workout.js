@@ -1,36 +1,46 @@
-// let nums = [0,1,1,0]
-
-// Output: [0,1]
-// Explanation:
-// The numbers 0 and 1 each appear twice in the array.
+let s = "ab#c",
+  t = "ad#c";
+// Output: true
+// Explanation: Both s and t become "ac".
 // Example 2:
-// Input: nums = [0,3,2,1,3,2]
-// Output: [2,3]
-// Explanation:
-// The numbers 2 and 3 each appear twice in the array.
+
+// Input: s = "ab##", t = "c#d#"
+// Output: true
+// Explanation: Both s and t become "".
 // Example 3:
-Input: nums = [7,1,5,4,3,4,6,0,9,5,8,2]
-// Output: [4,5]
-// Explanation:
-// The numbers 4 and 5 each appear twice in the array.
 
+// Input: s = "a#c", t = "b"
+// Output: false
+// Explanation: s becomes "c" while t becomes "b".
+// let s = "ab#c";  // example string
+// let t = "ad#c";  // example string
 
-let f = {}, x = [];
+s = s.split("");
+t = t.split("");
 
-for (let i = 0; i < nums.length; i++) {
-    f[nums[i]] = 0;
-}
-
-for (let i = 0; i < nums.length; i++) {
-    f[nums[i]]++;
-}
-
-for(let key in f){
-    if(f[key]>=2){
-        x.push(key)
+for (let i = 0; i < s.length; i++) {
+  if (s[i] === "#") {
+    s.splice(i, 1);
+    if (i > 0) {
+      s.splice(i - 1, 1);
+      i -= 2;
+    } else {
+      i--;
     }
-    
+  }
 }
 
-console.log(typeof(x));
+for (let i = 0; i < t.length; i++) {
+  if (t[i] === "#") {
+    t.splice(i, 1);
+    if (i > 0) {
+      t.splice(i - 1, 1);
+      i -= 2;
+    } else {
+      i--;
+    }
+  }
+}
+console.log(s);
 
+console.log(s.join("") === t.join(""));
