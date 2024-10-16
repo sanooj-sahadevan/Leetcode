@@ -1,46 +1,27 @@
-let s = "ab#c",
-  t = "ad#c";
-// Output: true
-// Explanation: Both s and t become "ac".
+Input: rowIndex = 3;
+// Output: [1,3,3,1]
 // Example 2:
 
-// Input: s = "ab##", t = "c#d#"
-// Output: true
-// Explanation: Both s and t become "".
+// Input: rowIndex = 0
+// Output: [1]
 // Example 3:
 
-// Input: s = "a#c", t = "b"
-// Output: false
-// Explanation: s becomes "c" while t becomes "b".
-// let s = "ab#c";  // example string
-// let t = "ad#c";  // example string
+// Input: rowIndex = 1
+// Output: [1,1]
+const triangle = [];
 
-s = s.split("");
-t = t.split("");
+for (let n = 0; n < rowIndex + 1; n++) {
+  const row = [1];
 
-for (let i = 0; i < s.length; i++) {
-  if (s[i] === "#") {
-    s.splice(i, 1);
-    if (i > 0) {
-      s.splice(i - 1, 1);
-      i -= 2;
-    } else {
-      i--;
-    }
+  for (let k = 1; k < n; k++) {
+    row[k] = triangle[n - 1][k - 1] + triangle[n - 1][k];
   }
+
+  if (n > 0) row.push(1);
+  triangle.push(row);
 }
 
-for (let i = 0; i < t.length; i++) {
-  if (t[i] === "#") {
-    t.splice(i, 1);
-    if (i > 0) {
-      t.splice(i - 1, 1);
-      i -= 2;
-    } else {
-      i--;
-    }
-  }
-}
-console.log(s);
+console.log(triangle[triangle.length - 1]);
 
-console.log(s.join("") === t.join(""));
+console.log(triangle);
+
