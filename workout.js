@@ -1,40 +1,33 @@
-// let s = "leetcode";
-// Output: 0
-// xplanation:
-// The character 'l' at index 0 is the first character that does not occur at any other index.
-// Example 2:
-Input: s = "loveleetcode";
-// Output: 2
+// Input: nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+// Output: 6
+// Explanation: The subarray [4,-1,2,1] has the largest sum 6.
+
+// let nums = [1]
+// Output: 1
+// Explanation: The subarray [1] has the largest sum 1.
 // Example 3:
-// Input: s = "aabb"
-// Output: -1
-let res = 0
-let f = {},
-  x = [];
-let y = s.split("");
-for (let i = 0; i < y.length; i++) {
-  f[y[i]] = 0;
-}
 
-for (let i = 0; i < y.length; i++) {
-  f[y[i]]++;
-}
+// Input: nums = [5, 4, -1, 7, 8];
+// Output: 23
+// Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
 
-for(let key in f){
-  if(f[key]==1){
-    res = key
-    break;
+let max = -Infinity;
+let sum = 0;
+const results = [];
+for (const num of nums) {
+  results.push(num);
+  sum += num;
+  max = Math.max(sum, max);
+  if (sum < 0) {
+    sum = 0;
+    results.length = 0;
   }
 }
-
-
-for(i =0;i<y.length;i++){
-  if(y[i]===res){
-    console.log(i);
-    break
-  }
+let res = 0;
+for (i = 0; i < results.length; i++) {
+  res += results[i];
 }
 
+console.log(results);
 
 console.log(res);
-console.log(f);
