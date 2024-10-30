@@ -1,22 +1,45 @@
-let stones = [2, 7, 4, 1, 8, 1];
-// Output: 1
-// Explanation:
-// We combine 7 and 8 to get 1 so the array converts to [2,4,1,1,1] then,
-// we combine 2 and 4 to get 2 so the array converts to [2,1,1,1] then,
-// we combine 2 and 1 to get 1 so the array converts to [1,1,1] then,
-// we combine 1 and 1 to get 0 so the array converts to [1] then that's the value of the last stone.
+Input: nums = [10, 4, 8, 3];
+// Output: [15,1,11,22]
+// Explanation: The array leftSum is [0,10,14,22] and the array rightSum is [15,11,3,0].
+// The array answer is [|0 - 15|,|10 - 11|,|14 - 3|,|22 - 0|] = [15,1,11,22].
+// Example 2:
 
-let a = stones.sort((a, b) => a - b);
+// Input: nums = [1]
+// Output: [0]
+// Explanation: The array leftSum is [0] and the array rightSum is [0].
+// The array answer is [|0 - 0|] = [0].
 
-while (stones.length) {
-  if (a.length == 1) {
-    break;
+let res = [];
+for (let i = 0; i < nums.length; i++) {
+  let left = 0;
+  let right = 0;
+  for (let j = i + 1; j < nums.length; j++) {
+    right += nums[j];
   }
-  let b = a.pop();
-  let bb = a.pop();
-  a.push(b - bb);
-  a.sort((a, b) => a - b);
 
+  for (let k = 0; k < i; k++) {
+    left += nums[k];
+    console.log(left);
+  }
+
+  res.push(Math.abs(left - right));
 }
+console.log(res);
 
-console.log(a);
+// let res = [];
+
+//     for (let i = 0; i < nums.length; i++) {
+//         let left = 0;
+//         let right = 0;
+
+//         for (let j = i + 1; j < nums.length; j++) {
+//             right += nums[j];
+//         }
+
+//         for (let k = 0; k < i; k++) {
+//             left += nums[k];
+//         }
+//         res.push(Math.abs(left - right));
+//     }
+
+//     return res;
