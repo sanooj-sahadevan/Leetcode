@@ -1,45 +1,31 @@
-Input: nums = [10, 4, 8, 3];
-// Output: [15,1,11,22]
-// Explanation: The array leftSum is [0,10,14,22] and the array rightSum is [15,11,3,0].
-// The array answer is [|0 - 15|,|10 - 11|,|14 - 3|,|22 - 0|] = [15,1,11,22].
+let s = "abcd",
+  t = "abcde";
+// Output: "e"
+// Explanation: 'e' is the letter that was added.
 // Example 2:
+// Input: s = "", t = "y"
+// Output: "y"
 
-// Input: nums = [1]
-// Output: [0]
-// Explanation: The array leftSum is [0] and the array rightSum is [0].
-// The array answer is [|0 - 0|] = [0].
+s = s.split("");
+t = t.split("");
 
-let res = [];
+let nums = [...s,...t]
+let f = {}, x = [];
+
 for (let i = 0; i < nums.length; i++) {
-  let left = 0;
-  let right = 0;
-  for (let j = i + 1; j < nums.length; j++) {
-    right += nums[j];
-  }
-
-  for (let k = 0; k < i; k++) {
-    left += nums[k];
-    console.log(left);
-  }
-
-  res.push(Math.abs(left - right));
+    f[nums[i]] = 0;
 }
-console.log(res);
 
-// let res = [];
+for (let i = 0; i < nums.length; i++) {
+    f[nums[i]]++;
+}
 
-//     for (let i = 0; i < nums.length; i++) {
-//         let left = 0;
-//         let right = 0;
-
-//         for (let j = i + 1; j < nums.length; j++) {
-//             right += nums[j];
-//         }
-
-//         for (let k = 0; k < i; k++) {
-//             left += nums[k];
-//         }
-//         res.push(Math.abs(left - right));
-//     }
-
-//     return res;
+for(let key in f){
+    if(f[key]===1){
+        return f[key]
+    }
+    if(f[key]%2==1){
+        return f[key]
+    }
+    
+}
