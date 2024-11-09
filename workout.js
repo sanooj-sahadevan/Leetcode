@@ -1,31 +1,17 @@
-let s = "abcd",
-  t = "abcde";
-// Output: "e"
-// Explanation: 'e' is the letter that was added.
-// Example 2:
-// Input: s = "", t = "y"
-// Output: "y"
 
-s = s.split("");
-t = t.split("");
+let str = ["eat", "tea", "tan", "ate", "nat", "bat"];
+Output: [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]];
 
-let nums = [...s,...t]
-let f = {}, x = [];
 
-for (let i = 0; i < nums.length; i++) {
-    f[nums[i]] = 0;
+let b = [];
+
+for (i = 0; i < str.length; i++) {
+  let res = str[i].split("").sort().join("");
+  b.push(res);
 }
 
-for (let i = 0; i < nums.length; i++) {
-    f[nums[i]]++;
-}
 
-for(let key in f){
-    if(f[key]===1){
-        return f[key]
-    }
-    if(f[key]%2==1){
-        return f[key]
-    }
-    
-}
+
+
+
+// [ 'aet', 'aet', 'ant', 'aet', 'ant', 'abt' ]
