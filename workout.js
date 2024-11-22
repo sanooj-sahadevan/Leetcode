@@ -1,19 +1,34 @@
-let date = "2080-02-29";
-// Output: "100000100000-10-11101"
-// Explanation:
-// 100000100000, 10, and 11101 are the binary representations of 2080, 02, and 29 respectively.
+
+let nums = [4,3,2,7,8,2,3,1]
+// Output: [2,3]
 // Example 2:
-// Input: date = "1900-01-01"
-// Output: "11101101100-1-1"
 
-let x = date.split("-");
+// Input: nums = [1,1,2]
+// Output: [1]
+// Example 3:
 
-let res = [];
+// Input: nums = [1]
+// Output: []
+ 
 
-for (let i = 0; i < x.length; i++) {
-  let binary = Number(x[i]).toString(2);
-  console.log(binary);
-  res.push(binary);
+
+let f = {},
+x = [];
+
+for (let i = 0; i < nums.length; i++) {
+f[nums[i]] = 0;
 }
 
-console.log(res.join('-'));
+for (let i = 0; i < nums.length; i++) {
+f[nums[i]]++;
+}
+let res = [];
+for (let i in f) {
+if (f[i] == 2) {
+    let x = i;
+    console.log(typeof(i))
+    res.push(Number(i));
+}
+}
+// return  Number(res)
+console.log (res)
