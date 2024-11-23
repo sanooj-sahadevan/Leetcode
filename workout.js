@@ -1,34 +1,62 @@
-
-let nums = [4,3,2,7,8,2,3,1]
-// Output: [2,3]
+let s = "ccc";
+// Output: 3
+// Explanation: One longest palindrome that can be built is "dccaccd", whose length is 7.
 // Example 2:
 
-// Input: nums = [1,1,2]
-// Output: [1]
-// Example 3:
+// Input: s = "a"
+// Output: 1
+// Explanation: The longest palindrome that can be built is "a", whose length is 1.
 
-// Input: nums = [1]
-// Output: []
- 
-
+s = s.split("");
 
 let f = {},
-x = [];
+  x = [],
+  y = [];
 
-for (let i = 0; i < nums.length; i++) {
-f[nums[i]] = 0;
+for (let i = 0; i < s.length; i++) {
+  f[s[i]] = 0;
 }
 
-for (let i = 0; i < nums.length; i++) {
-f[nums[i]]++;
+for (let i = 0; i < s.length; i++) {
+  f[s[i]]++;
 }
-let res = [];
-for (let i in f) {
-if (f[i] == 2) {
-    let x = i;
-    console.log(typeof(i))
-    res.push(Number(i));
+
+for (let key in f) {
+  if (f[key] % 2 === 0) {
+    x.push(f[key]);
+  }
 }
+
+for (let key in f) {
+  if (f[key] % 2 === 1) {
+    y.push(f[key]);
+  }
 }
-// return  Number(res)
-console.log (res)
+let sum = 0;
+for (let i = 0; i < y.length; i++) {
+  if (y[i] > 1) {
+    y[i] = y[i] - 1;
+    sum += y[i];
+  }
+}
+
+for (let i = 0; i < y.length; i++) {
+  if (y[i] === 1) {
+    x.push(y[i]);
+    break;
+  }
+}
+
+let result = 0
+
+for(let i =0;i<x.length;i++){
+    sum+=x[i]
+}
+
+let res = [result, sum];
+let ww = res.reduce((a, b) => a + b);
+
+console.log(ww);
+
+console.log(result + sum, "result");
+console.log(ww);
