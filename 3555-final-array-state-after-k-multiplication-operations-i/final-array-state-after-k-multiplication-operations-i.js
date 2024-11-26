@@ -12,7 +12,6 @@ var getFinalState = function (nums, k, multiplier) {
         res = res * multiplier;
         console.log(res);
         nums[index] = res
-
     }
     return nums
 };
