@@ -1,25 +1,10 @@
-// let s = "ab-cd"
-// Output: "dc-ba"
+
+let nums = [3,2,1,5,6,4], k = 2
+// Output: 5
 // Example 2:
 
-// let s = "a-bC-dEf-ghIj";
-// Output: "j-Ih-gfE-dCba"
-// Example 3:
-
-Input: s = "Test1ng-Leet=code-Q!";
-// Output: "Qedo1ct-eeLg=ntse-T!
-
-s = s.split("");
-let temp;
-
-for (let i = 0; i < Math.floor(s.length / 2); i++) {
-  if (/[a-zA-Z]/) {
-    temp = s[i];
-    s[i] = s[s.length - 1 - i];
-    s[s.length - 1 - i] = temp;
-  } else {
-    continue;
-  }
-}
-console.log(s.join(""));
-// return s.join('')
+// Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
+// Output: 4
+ 
+nums = nums.sort((a,b)=>b-a)
+console.log(nums[k-1]);
