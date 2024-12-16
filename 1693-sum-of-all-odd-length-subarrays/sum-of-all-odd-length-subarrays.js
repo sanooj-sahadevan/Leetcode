@@ -11,10 +11,8 @@ var sumOddLengthSubarrays = function (arr) {
             x.push(arr.slice(z, z + j));
         }
     }
-    console.log(x);
     x = x.flat(Infinity)
     let sum = x.reduce((acc, curr) => acc + curr)
     return sum
-    console.log(sum);
 
 };
