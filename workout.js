@@ -1,42 +1,12 @@
-let board = [
-  ["5", "3", ".", ".", "7", ".", ".", ".", "."],
-  ["6", ".", ".", "1", "9", "5", ".", ".", "."],
-  [".", "9", "8", ".", ".", ".", ".", "6", "."],
-  ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
-  ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
-  ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
-  [".", "6", ".", ".", ".", ".", "2", "8", "."],
-  [".", ".", ".", "4", "1", "9", ".", ".", "5"],
-  [".", ".", ".", ".", "8", ".", ".", "7", "9"],
-];
-// Output: true
-// Example 2:
+let triangle = [[-1], [2, 3], [1, -1, -3]];
 
-// Input: board =
-// [["8","3",".",".","7",".",".",".","."]
-// ,["6",".",".","1","9","5",".",".","."]
-// ,[".","9","8",".",".",".",".","6","."]
-// ,["8",".",".",".","6",".",".",".","3"]
-// ,["4",".",".","8",".","3",".",".","1"]
-// ,["7",".",".",".","2",".",".",".","6"]
-// ,[".","6",".",".",".",".","2","8","."]
-// ,[".",".",".","4","1","9",".",".","5"]
-// ,[".",".",".",".","8",".",".","7","9"]]
-// Output: false
-// Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+// Output: -1
 
-let f = {}, x = [];
-board = board.replaceAll('.', ''); // Replacing all dots with an empty string
-console.log(board);for(let i =0;i<board.length;i++){
-   
-    for (let i = 0; i < board.length; i++) {
-        f[board[i]] = 0;
-    }
-    
-    for (let i = 0; i < board.length; i++) {
-        f[board[i]]++;
-    }
-    
+let x = [];
+for (let i = 0; i < triangle.length; i++) {
+  x.push(Math.min(...triangle[i]));
 }
+console.log(x);
 
-console.log(f);
+let res  = x.reduce((acc, curr) => acc + curr, 0);
+console.log(res);
