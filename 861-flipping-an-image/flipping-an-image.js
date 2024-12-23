@@ -11,6 +11,5 @@ var flipAndInvertImage = function (image) {
         }
     }
     return image
-    console.log(image);
 
 };
