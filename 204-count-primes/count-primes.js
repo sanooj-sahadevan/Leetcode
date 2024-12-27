@@ -2,20 +2,23 @@
  * @param {number} n
  * @return {number}
  */
-var countPrimes = function(n) {
-if (n < 2) return 0;
+var countPrimes = function (n) {
+    if (n <= 2) return 0;
+    let count = 1;
 
-  let isPrime = Array(n).fill(true); 
-  isPrime[0] = isPrime[1] = false; 
+    const isPrime = num => {
+        if (num === 2) return true;
+        if (num % 2 === 0) return false;
 
-  for (let i = 2; i * i < n; i++) {
-    if (isPrime[i]) {
-      for (let j = i * i; j < n; j += i) {
-        isPrime[j] = false; 
-      }
+        for (let i = 3; i * i <= num; i += 2) {
+            if (num % i === 0) return false;
+        }
+        return true;
     }
-  }
 
-  return isPrime.filter(Boolean).length; 
-    
-};
+    for (let i = 3; i < n; i += 2) {
+        if (isPrime(i)) count++;
+    }
+
+    return count;
+}
