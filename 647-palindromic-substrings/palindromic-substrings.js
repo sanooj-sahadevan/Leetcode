@@ -3,6 +3,7 @@
  * @return {number}
  */
 var countSubstrings = function (s) {
+    // too tough
     let count = 0;
 
     const expandAroundCenter = (left, right) => {
