@@ -1,26 +1,29 @@
-let boxes = "110";
-// Output: [1,1,3]
-// Explanation: The answer for each box is as follows:
-// 1) First box: you will have to move one ball from the second box to the first box in one operation.
-// 2) Second box: you will have to move one ball from the first box to the second box in one operation.
-// 3) Third box: you will have to move one ball from the first box to the third box in two operations, and move one ball from the second box to the third box in one operation.
+let head = [0, 3, 1, 0, 4, 5, 2, 0];
+// Output: [4,11]
+// Explanation:
+// The above figure represents the given linked list. The modified list contains
+// - The sum of the nodes marked in green: 3 + 1 = 4.
+// - The sum of the nodes marked in red: 4 + 5 + 2 = 11.
 // Example 2:
 
-// Input: boxes = "001011"
-// Output: [11,8,5,4,3,4]
-boxes = boxes.split("");
-//console.log(boxes);
+// Input: head = [0,1,0,3,0,2,2,0]
+// Output: [1,3,4]
+// Explanation:
+// The above figure represents the given linked list. The modified list contains
+// - The sum of the nodes marked in green: 1 = 1.
+// - The sum of the nodes marked in red: 3 = 3.
+// - The sum of the nodes marked in yellow: 2 + 2 = 4.
 
-let x = [],
-  sum = 0;
-for (let i = 0; i < boxes.length; i++) {
+var mergeNodes = function (head) {
+
+  
+  let curr = this.head;
   let sum = 0;
-  for (let j = 0; j < boxes.length; j++) {
-    if (boxes[j] === "1") {
-      sum += Math.abs(i - j);
+  while (curr) {
+    if (curr.value != 0) {
+      sum += curr.value;
+    } else {
+      sum = 0;
     }
   }
-  x.push(sum)     
-}
-  
-console.log(x);
+};
