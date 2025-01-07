@@ -20,7 +20,7 @@ for (let i = 0; i < boxes.length; i++) {
       sum += Math.abs(i - j);
     }
   }
-  x.push(sum);
+  x.push(sum)     
 }
-
+  
 console.log(x);
