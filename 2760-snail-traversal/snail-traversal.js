@@ -24,7 +24,7 @@ Array.prototype.snail = function (rowsCount, colsCount) {
 
 
 
-    
+
 }
 
 /**
