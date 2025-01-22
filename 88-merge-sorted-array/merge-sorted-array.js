@@ -8,8 +8,7 @@
 var merge = function (nums1, m, nums2, n) {
     let x = nums1.splice(0, m);
     let y = nums2.splice(0, n);
-    let res = [...x, ...y];
-    res.sort((a, b) => a - b)
+    let res = [...x, ...y].sort((a, b) => a - b)
     for (let i = 0; i < res.length; i++) {
         nums1[i] = res[i];
     }
