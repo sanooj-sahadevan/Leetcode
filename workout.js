@@ -1,20 +1,25 @@
-// let nums = [1, 2, 3, 4, 5, 6, 7],
-//   k = 3;
-// Output: [5,6,7,1,2,3,4]
-// Explanation:
-// rotate 1 steps to the right: [7,1,2,3,4,5,6]
-// rotate 2 steps to the right: [6,7,1,2,3,4,5]
-// rotate 3 steps to the right: [5,6,7,1,2,3,4]
+let prices = [7, 1, 5, 3, 6, 4];
+// Output: 7
+// Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+// Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+// Total profit is 4 + 3 = 7.
 // Example 2:
 
- Input: nums = [-1,-100,3,99], k = 2
-// Output: [3,99,-1,-100]
-// Explanation:
-// rotate 1 steps to the right: [99,-1,-100,3]
-// rotate 2 steps to the right: [3,99,-1,-100]
+// Input: prices = [1,2,3,4,5]
+// Output: 4
+// Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+// Total profit is 4.
+// Example 3:
 
-for (let i = 0; i < k; i++) {
-  let res = nums.pop();
-  nums.unshift(res);
+// Input: prices = [7,6,4,3,1]
+// Output: 0
+// Explanation: There is no way to make
+
+let res = [];
+for (i = 0; i < prices.length; i++) {
+  if (prices[i] < prices[i + 1]) {
+    res.push(Math.abs(prices[i] - prices[i + 1]));
+  }
 }
-console.log(nums);
+
+console.log(res);
