@@ -1,25 +1,17 @@
-let prices = [7, 1, 5, 3, 6, 4];
-// Output: 7
-// Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
-// Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
-// Total profit is 4 + 3 = 7.
+//let nums = [2, 3, 1, 1, 4];
+// Output: true
+// Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
 // Example 2:
 
-// Input: prices = [1,2,3,4,5]
-// Output: 4
-// Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
-// Total profit is 4.
-// Example 3:
+Input: nums = [3,2,1,0,4]
+// Output: false
+// Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
 
-// Input: prices = [7,6,4,3,1]
-// Output: 0
-// Explanation: There is no way to make
+let sum = 0
+for (i = 0; i < nums.length; i++) {
+sum += nums[i]
+console.log(sum);
+//console.log(nums.length,'-----');
 
-let res = [];
-for (i = 0; i < prices.length; i++) {
-  if (prices[i] < prices[i + 1]) {
-    res.push(Math.abs(prices[i] - prices[i + 1]));
-  }
+if(sum==nums.length-1) return true
 }
-
-console.log(res);
