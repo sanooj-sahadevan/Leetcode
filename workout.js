@@ -12,9 +12,24 @@ Input: s = "a";
 // Output: 6
 // Explanation: The last word is "joyboy" with length 6.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let x = [];
 let ctr = 0;
-for (let i = s.length - 1; i >= 0; i--) {
+for (let i = s.length - 1; i >=7 0; i--) {
   console.log(s[i]);
   x.push(s[i]);
   if (s[i] == " " && ctr == 0) continue;
