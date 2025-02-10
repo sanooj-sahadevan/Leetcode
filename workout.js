@@ -1,19 +1,32 @@
-// Input: s = "abc"
-// Output: "abc"
-// Explanation
-// There is no digit in the string.
+// let s = "PAYPALISHIRING",
+//   numRows = 3;
+// Output: "PAHNAPLSIIGYIR"
 // Example 2:
-let s = "a8f";
-// Output: ""
-// Explanation:
-// First, we apply the operation on s[2], and s becomes "c4".
-// Then we apply the operation on s[1], and s becomes "".
 
-for (i = 0; i < s.length; i++) {
-  if (/\d/.test(s[i])) {
-    s = s.slice(0, i - 1) + s.slice(i + 1);
-    i--;
-    i--;
-  }
+// Input: s = "PAYPALISHIRING", numRows = 4
+// Output: "PINALSIGYAHRPI"
+// Explanation:
+// P     I    N
+// A   L S  I G
+// Y A   H R
+// P     I
+
+Input: (s = "A"), (numRows = 1);
+// Output: "A"
+
+if (numRows === 1) {
+    console.log(true);
+    
+  console.log(s);
 }
-console.log(s);
+let res = Array(numRows).fill("");
+console.log(res);
+
+let cycle = (numRows - 1) * 2; // Pattern cycle length
+
+for (let i = 0; i < s.length; i++) {
+  let row = i % cycle;
+  row = row < numRows ? row : cycle - row;
+  res[row] += s[i];
+}
+console.log(res);
