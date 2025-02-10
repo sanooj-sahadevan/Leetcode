@@ -1,14 +1,19 @@
-//let s = "the sky is blue";
-// Output: "blue is sky the"
+// Input: s = "abc"
+// Output: "abc"
+// Explanation
+// There is no digit in the string.
 // Example 2:
+let s = "a8f";
+// Output: ""
+// Explanation:
+// First, we apply the operation on s[2], and s becomes "c4".
+// Then we apply the operation on s[1], and s becomes "".
 
- //Input: s = "  hello world  "
-// Output: "world hello"
-// Explanation: Your reversed string should not contain leading or trailing spaces.
-// Example 3:
-
-Input: s = "a good   example"
-// Output: "example good a"
-// Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
- s = s.trim().split(/\s+/)
-console.log(s.reverse().join(' '));
+for (i = 0; i < s.length; i++) {
+  if (/\d/.test(s[i])) {
+    s = s.slice(0, i - 1) + s.slice(i + 1);
+    i--;
+    i--;
+  }
+}
+console.log(s);
