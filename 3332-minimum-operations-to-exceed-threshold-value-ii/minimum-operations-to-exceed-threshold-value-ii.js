@@ -28,6 +28,9 @@ var minOperations = function (nums, k) {
 
     //     }
     // }
+
+    // above is my code, ot shoes time limt exceed  so take code frim solution MinPriorityQueue methid
+    // amd i try o sudy new method
        const queue = new MinPriorityQueue();
     let operations = 0;
 
