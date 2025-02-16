@@ -8,4 +8,11 @@ for (let char of t) {
   if (i === s.length) break;
 }
 
+
+
+
+
+
+
+
 console.log(i === s.length);
