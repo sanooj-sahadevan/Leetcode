@@ -1,22 +1,38 @@
-let tiles = "AAB";
-// Output: 8
-// Explanation: The possible sequences are "A", "B", "AA", "AB", "BA", "AAB", "ABA", "BAA".
+Input: nums = [-1, 0, 1, 2, -1, -4];
+// Output: [[-1,-1,2],[-1,0,1]]
 
-tiles = tiles.split("").sort().join("");
-let used = new Array(tiles.length).fill(false);
+nums.sort((a, b) => a - b); 
 
-const backtrack = () => {
-  let count = 0;
-  for (let i = 0; i < tiles.length; i++) {
-    if (used[i] || (i > 0 && tiles[i] === tiles[i - 1] && !used[i - 1]))
-      continue;
-    used[i] = true;
-    count += 1 + backtrack();
-    used[i] = false;
+let start = 0,
+  end = nums.length - 1;
+let x = [];
+
+while (start < end) {
+  let mid = start + 1; 
+
+  while (mid < end) {
+    let sum = nums[start] + nums[mid] + nums[end];
+
+    if (sum === 0) {
+      x.push([nums[start], nums[mid], nums[end]]);
+
+      while (mid < end && nums[mid] === nums[mid + 1]) mid++;
+     while (mid < end && nums[end] === nums[end - 1]) end--;
+
+      mid++;
+      end--;
+    } else if (sum > 0) {
+      end--; 
+    } else {
+      mid++; 
+    }
   }
-  console.log(count);
 
-  return count;
-};
+  // Skip duplicates for `start`
+  while (start < nums.length - 1 && nums[start] === nums[start + 1]) start++;
 
-backtrack()
+  start++;
+  end = nums.length - 1; // Reset `end` for the next `start`
+}
+
+console.log(x);
