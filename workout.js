@@ -28,11 +28,6 @@ while (start < end) {
     }
   }
 
-  // Skip duplicates for `start`
-  while (start < nums.length - 1 && nums[start] === nums[start + 1]) start++;
-
-  start++;
-  end = nums.length - 1; // Reset `end` for the next `start`
-}
+  
 
 console.log(x);
