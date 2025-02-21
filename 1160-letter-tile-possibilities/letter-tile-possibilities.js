@@ -3,7 +3,7 @@
  * @return {number}
  */
 var numTilePossibilities = function (tiles) {
-// onspired ny solutions
+    // onspired ny solutions
     tiles = tiles.split("").sort().join("");
     let used = new Array(tiles.length).fill(false);
 
@@ -20,6 +20,6 @@ var numTilePossibilities = function (tiles) {
         return count;
     };
 
-   return backtrack()
+    return backtrack()
 
 };
