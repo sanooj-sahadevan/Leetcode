@@ -9,10 +9,8 @@ var applyOperations = function (nums) {
             nums[i + 1] = 0;
         }
     }
-    console.log(nums);
 
     let arr = nums.filter((v) => v != 0);
-    console.log(arr);
 
     let y = nums.length - arr.length;
     let i = 0;
@@ -21,6 +19,5 @@ var applyOperations = function (nums) {
         i++;
     }
     return arr
-    console.log(arr);
 
 };
